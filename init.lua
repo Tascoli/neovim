@@ -1,0 +1,17 @@
+require('user.plugins-setup')
+require('user.core.options')
+require('user.core.keymaps')
+-- require('user.core.autocommand')
+require('user.core.colorscheme')
+
+require('user.plugins.nvim-tree')
+require('user.plugins.lualine')
+-- require('user.plugins.bufferline')
+-- require('user.plugins.comment')
+-- require('user.plugins.todo-comments')
+require('user.plugins.treesitter')
+require('user.plugins.telescope')
+-- require('user.plugins.cmp')
+-- require('user.plugins.lsp_conf') -- Configure all plugins envolved in LSP
+-- require('user.plugins.colorizer')
+-- require('user.plugins.toggleterm')
