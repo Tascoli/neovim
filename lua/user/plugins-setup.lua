@@ -70,7 +70,7 @@ return require('packer').startup(function(use)
   --  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- Comment with 'gcc'
-    --use {'numToStr/Comment.nvim',}
+    use {'numToStr/Comment.nvim',}
 
    -- Todo Comments
     --use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
@@ -109,12 +109,14 @@ return require('packer').startup(function(use)
 ---- LSP AND COMPLETION SECTION ----
 -------------------------------------
 
---    use { -- Autocompletion
---        'hrsh7th/nvim-cmp',
---        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
---            'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-cmdline',
---        },
---    }
+    use { -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-nvim-lsp',
+        use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"}),
+        --requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip',
+        --    'hrsh7th/cmp-path', 'hrsh7th/cmp-buffer', 'hrsh7th/cmp-cmdline',
+        --},
+    }
 
     use { -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
@@ -127,13 +129,13 @@ return require('packer').startup(function(use)
 --        'nvim-treesitter/nvim-treesitter-textobjects',
 --        after = 'nvim-treesitter',
 --    }
---    use { -- LSP Configuration & Plugins
---        'neovim/nvim-lspconfig',
+    use { -- LSP Configuration & Plugins
+        'neovim/nvim-lspconfig',
 --        requires = {
 
 	-- Automatically install LSPs to stdpath for neovim
---         'williamboman/mason.nvim',
---         'williamboman/mason-lspconfig.nvim',
+         'williamboman/mason.nvim',
+         'williamboman/mason-lspconfig.nvim',
 
         -- Useful status updates for LSP
 --        'j-hui/fidget.nvim',
@@ -141,7 +143,7 @@ return require('packer').startup(function(use)
         -- Additional lua configuration, makes nvim stuff amazing
 --        'folke/neodev.nvim',
 --        },
---    }
+   }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

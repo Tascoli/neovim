@@ -117,3 +117,11 @@ keymap("", "<Leader>k>", "<ESC>v :m .-2<CR>==", opts)
 -- Open and Close NvimTree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
 
+-- COMMENT
+-- Comment with Alt or Cmd + /
+
+vim.keymap.set('n', '<Leader>/', 'gcc', {remap = true })
+vim.keymap.set('i', '<Leader>/>', '<ESC>gcc', {remap = true })
+vim.keymap.set('v', '<Leader>/>', 'gc', {remap = true })
+
+return M
